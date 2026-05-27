@@ -28,7 +28,7 @@ A organização dos arquivos no repositório segue o padrão abaixo:
 ## 👥 Desenvolvedores
 
 * **[Ranny]** - [LealRanny](https://github.com/LealRanny)
-* **[Matheus]** - [aqui vai o nome do perfil do matheus]
+* **[Matheus]** - [MatheusHenriqueLira](https://github.com/MatheusHenriqueLira)
 
 ---
 Feito com ❤️ e dedicação por uma equipe de futuros Devs!
