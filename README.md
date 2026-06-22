@@ -1,4 +1,4 @@
-# 🚀 [O nome do nosso projeto ainda está sendo pensado!]
+# 🚀 [Flavia Ribeiro Estetica]
 
 ---
 

@@ -1,0 +1,15 @@
+body{
+    background-color: #F9F5F0;
+}
+
+.navbar{
+    background-color: #344F1F;
+}
+
+.card-fofissimo{
+    background-color: #F2EAD3;
+    border: 2px solid #344F1F;
+    padding: 20px;
+    margin: auto;
+    margin-top: 50px;
+}
