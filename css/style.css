@@ -47,24 +47,32 @@ body {
     align-items: center;
 }
 .sobre-mim img {
-    width: 700px;
-    height: 700px;
-    margin-bottom: 20px;
-    margin-left: 100px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(150, 114, 80, 0.15);
+    transition: transform 0.3s ease;
+}
+.sobre-mim img:hover {
+    transform: scale(1.02);
 }
 .sobre-mim {
     color: var(--verde);
-    font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
-
+.sobre-mim p {
+    font-size: 18px;
+    line-height: 1.8;
+}
 .sobre-mim h1 {
     font-size: 48px;
     margin-bottom: 20px;
+    font-weight: 700;
 }
 .meu-carrosel {
     margin-top: 50px;
     margin-bottom: 50px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
 .carousel-item img {
@@ -81,4 +89,17 @@ body {
 
 .feedbacks {
     color: var(--verde);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel-item img {
+        height: 300px;
+    }
+    body {
+        padding-top: 100px;
+    }
+    .sobre-mim h1 {
+        font-size: 36px;
+    }
 }
