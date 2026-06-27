@@ -85,7 +85,6 @@ body {
     color: var(--verde);
     padding: 50px 0;
 }
-
 .feedbacks {
     color: var(--verde);
     margin-bottom: 80px;
@@ -124,8 +123,6 @@ body {
 }
 
 
-
-/* Responsividade */
 @media (max-width: 768px) {
     .carousel-item img {
         height: 300px;
@@ -136,4 +133,23 @@ body {
     .sobre-mim h1 {
         font-size: 36px;
     }
+}
+
+@media (max-width: 576px) {
+    .sobre-mim h1 {
+        font-size: 28px;
+    }
+    body {
+        padding-top: 140px;
+    }
+}
+
+.botaozin{
+    background-color: var(--verde);
+    color: var(--branco);
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
 }
