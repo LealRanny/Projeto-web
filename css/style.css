@@ -18,26 +18,26 @@ body {
 
 .minha-navbar .navbar-brand {
     color: var(--verde);
-    font-size: 24px;
+    font-size: 28px;
     font-weight: bold;
 }
 
 .navbar-brand img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     margin-left: 10px;
     margin-right: 10px;
 }
 
 .navbar-nav .nav-link {
     color: var(--verde);
-    font-size: 18px;
+    font-size: 23px;
     margin-right: 10px;
 }
 
 .sobre-mim img {
     transition: transform 0.3s ease;
-    border-radius: 10%;
+    border-radius: 40px;
 }
 
 .sobre-mim img:hover {
@@ -50,7 +50,7 @@ body {
 }
 
 .sobre-mim p {
-    font-size: 18px;
+    font-size: 24px;
     line-height: 1.8;
 }
 
@@ -106,8 +106,8 @@ body {
 
 /* Para aumentar a descrição (o parágrafo) do procedimento */
 .carousel-item p {
-    font-size: 20px;       /* O padrão costuma ser 14px. 16px ou 18px já dão uma leitura excelente! */
-    line-height: 1.6;      /* Aumenta o espaço entre as linhas para o texto não ficar sufocado */
+    font-size: 20px;       
+    line-height: 1.6;      
 }
 
 #carrosselProcedimentos {
