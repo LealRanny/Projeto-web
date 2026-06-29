@@ -1,7 +1,13 @@
 body {
-    background-color: #F9F5F0;
+    background-color:var(--branco);
     font-family: "Inria Serif", serif;
     padding-top: 150px;
+}
+
+body h1{
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
 }
 
 :root {
@@ -54,12 +60,6 @@ body {
     line-height: 1.8;
 }
 
-.sobre-mim h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
 .meu-carrosel {
     margin-top: 50px;
     margin-bottom: 50px;
@@ -70,7 +70,6 @@ body {
     height: 450px;
     object-fit: cover;
 }
-
 
 .meu-carrosel .carousel-item {
     transform: scale(0.94);
@@ -93,12 +92,6 @@ body {
     padding: 50px 0;
 }
 
-.fundoo-carrossel h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-weight: 700;
-}
-
 .carousel-item h5 {
     font-size: 25px;
     /* Ajuste esse número até ficar do tamanho que você gostar */
@@ -108,7 +101,6 @@ body {
     /* Cria um espacinho extra entre o título e o parágrafo */
 }
 
-/* Para aumentar a descrição (o parágrafo) do procedimento */
 .carousel-item p {
     font-size: 20px;
     line-height: 1.6;
@@ -148,12 +140,6 @@ body {
     color: var(--verde);
     margin-bottom: 80px;
     padding: 50px 0;
-}
-
-.feedbacks h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    font-weight: 700;
 }
 
 .card-feedback {
@@ -208,12 +194,6 @@ body {
     color: var(--verde);
     padding-top: 60px;
     padding-bottom: 60px;
-}
-
-.fundoo-endereco h1 {
-    font-size: 48px;
-    font-weight: 700;
-    margin-bottom: 40px;
 }
 
 footer {
