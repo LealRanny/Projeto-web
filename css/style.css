@@ -148,7 +148,12 @@ body h1{
     border-radius: 15px;
     box-shadow: 0 8px 20px rgba(150, 114, 80, 0.05);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
+.star-rating {
+    font-size: 28px !important;       
+    color: #c5a880;        
+    letter-spacing: 2px;   
 }
 
 .card-feedback:hover {
