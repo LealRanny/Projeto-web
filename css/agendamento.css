@@ -104,6 +104,138 @@ footer {
     width: 100%;
 }
 
+/* modals */
+
+.modal-verde .modal-content {
+    background-color: var(--branco) !important;
+    border: 4px solid var(--verde) !important;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(43, 92, 63, 0.15);
+}
+
+.modal-verde .modal-header,
+.modal-verde .modal-footer {
+    border: none;
+}
+
+.modal-verde .modal-body {
+    padding-left: 45px !important;
+    padding-right: 45px !important;
+}
+
+.modal-verde .modal-title,
+.modal-verde .form-label,
+.modal-verde h5,
+.modal-verde h6,
+.modal-verde p,
+.modal-verde .link-verde {
+    color: var(--verde) !important;
+}
+
+.modal-verde .form-control,
+.modal-verde .form-select {
+    border: 2px solid var(--verde);
+    border-radius: 15px;
+    color: var(--verde);
+    background-color: var(--branco);
+}
+
+.modal-verde .form-control::placeholder {
+    color: var(--verde);
+}
+
+.modal-verde .form-control:focus,
+.modal-verde .form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.25rem rgba(150, 114, 80, 0.25);
+    color: var(--verde);
+}
+
+.modal-verde .link-verde {
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.modal-verde .link-verde:hover {
+    color: var(--verde) !important;
+}
+
+.modal-verde .btn-verde {
+    background-color: var(--verde);
+    color: var(--branco) !important;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.modal-verde .btn-verde:hover {
+    background-color: #7d5e41;
+    transform: scale(1.02);
+}
+
+.modal-verde .btn-perigo {
+    background-color: #c0392b;
+    color: var(--branco) !important;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.modal-verde .btn-perigo:hover {
+    background-color: #a93226;
+    transform: scale(1.02);
+}
+
+.modal-verde .btn-cancelar {
+    background-color: #bbb;
+    color: #333 !important;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 24px;
+    font-weight: bold;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.modal-verde .btn-cancelar:hover {
+    background-color: #999;
+    transform: scale(1.02);
+}
+
+.btn-acao {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+    line-height: 1;
+}
+
+.btn-acao:hover {
+    transform: scale(1.15);
+}
+
+.btn-acao-editar:hover {
+    background-color: rgba(150, 114, 80, 0.15);
+}
+
+.btn-acao-excluir:hover {
+    background-color: rgba(192, 57, 43, 0.15);
+}
+
+
+
+.modal-verde .alert {
+    border-radius: 12px;
+    font-size: 14px;
+}
+
 @media (max-width: 768px) {
     body {
         padding-top: 40px;

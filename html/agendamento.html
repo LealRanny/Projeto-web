@@ -28,9 +28,18 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="ms-auto navbar-nav">
+                    <ul class="ms-auto navbar-nav align-items-center">
                         <li class="nav-item">
                             <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="cursor: pointer;" onclick="abrirModalEditarConta()">Editar Conta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="cursor: pointer;" onclick="abrirModalExcluirConta()">Excluir Conta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="cursor: pointer;" onclick="fazerLogout()">Sair</a>
                         </li>
                     </ul>
                 </div>
@@ -40,11 +49,11 @@
 
     <div class="container container-principal mt-5 pt-5">
         <div class="row g-4 align-items-stretch">
-            
+
             <div class="col-12 col-md-6">
                 <div class="card card-agendamento-estilizado p-4 h-100 shadow-sm border-0">
                     <h2 class="mb-4 text-center font-weight-bold">Novo Agendamento</h2>
-                    
+
                     <form id="formAgendamento" onsubmit="return false">
                         <div class="mb-3">
                             <label for="selectProcedimento" class="form-label">Procedimento</label>
@@ -56,7 +65,8 @@
                                 <option value="Limpeza de Pele">Limpeza de Pele</option>
                                 <option value="Dermaplaning + Limpeza de Pele">Dermaplaning + Limpeza de Pele</option>
                                 <option value="Micropigmentação Labial">Micropigmentação Labial</option>
-                                <option value="Micropigmentação de Sobrancelhas">Micropigmentação de Sobrancelhas</option>
+                                <option value="Micropigmentação de Sobrancelhas">Micropigmentação de Sobrancelhas
+                                </option>
                                 <option value="Lash Lifting">Lash Lifting</option>
                                 <option value="Brow Lamination">Brow Lamination</option>
                                 <option value="Massagem">Massagem</option>
@@ -93,7 +103,8 @@
                             Procedimento agendado com sucesso!
                         </div>
 
-                        <button type="button" class="btn botaozin w-100 py-2.5 font-weight-bold" onclick="fazerAgendamento()">Confirmar Agendamento</button>
+                        <button type="button" class="btn botaozin w-100 py-2.5 font-weight-bold"
+                            onclick="fazerAgendamento()">Confirmar Agendamento</button>
                     </form>
                 </div>
             </div>
@@ -113,6 +124,153 @@
     <footer class="text-center mt-5">
         <p class="footer-p">&copy; 2026 Flávia Ribeiro Estética e Beleza. Todos os direitos reservados.</p>
     </footer>
+
+ <!-- modals -->
+    <div class="modal fade modal-verde" id="modalEditarAgendamento" tabindex="-1"
+        aria-labelledby="modalEditarAgendamentoTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modalEditarAgendamentoTitulo">Editar Agendamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditarAgendamento" onsubmit="return false">
+                        <div class="mb-3">
+                            <label for="editSelectProcedimento" class="form-label">Procedimento</label>
+                            <select class="form-select" id="editSelectProcedimento" required>
+                                <option value="Extensão de Cílios">Extensão de Cílios</option>
+                                <option value="Sobrancelha com Henna">Sobrancelha com Henna</option>
+                                <option value="Design de Sobrancelhas">Design de Sobrancelhas</option>
+                                <option value="Limpeza de Pele">Limpeza de Pele</option>
+                                <option value="Dermaplaning + Limpeza de Pele">Dermaplaning + Limpeza de Pele</option>
+                                <option value="Micropigmentação Labial">Micropigmentação Labial</option>
+                                <option value="Micropigmentação de Sobrancelhas">Micropigmentação de Sobrancelhas</option>
+                                <option value="Lash Lifting">Lash Lifting</option>
+                                <option value="Brow Lamination">Brow Lamination</option>
+                                <option value="Massagem">Massagem</option>
+                                <option value="Drenagem Linfática">Drenagem Linfática</option>
+                                <option value="Microagulhamento">Microagulhamento</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editInputData" class="form-label">Data</label>
+                            <input type="date" class="form-control" id="editInputData" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editSelectHora" class="form-label">Horário</label>
+                            <select class="form-select" id="editSelectHora" required>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                            </select>
+                        </div>
+                        <div id="erroEditarAgendamento" class="alert alert-danger d-none" role="alert"></div>
+                        <div id="sucessoEditarAgendamento" class="alert alert-success d-none" role="alert">
+                            Agendamento atualizado com sucesso!
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-verde" onclick="salvarEdicaoAgendamento()">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade modal-verde" id="modalExcluirAgendamento" tabindex="-1"
+        aria-labelledby="modalExcluirAgendamentoTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modalExcluirAgendamentoTitulo">Excluir Agendamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p style="font-size: 17px;">Tem certeza que deseja excluir este agendamento?</p>
+                    <p class="text-muted" style="font-size: 14px;">Esta ação não pode ser desfeita.</p>
+                </div>
+                <div class="modal-footer justify-content-center" style="border: none;">
+                    <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-perigo" onclick="confirmarExclusaoAgendamento()">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade modal-verde" id="modalEditarConta" tabindex="-1"
+        aria-labelledby="modalEditarContaTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modalEditarContaTitulo">Editar Minha Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="formEditarConta" onsubmit="return false">
+                        <div class="mb-3">
+                            <label for="editContaEmail" class="form-label">E-mail</label>
+                            <input type="email" class="form-control" id="editContaEmail" placeholder="Seu e-mail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editContaTelefone" class="form-label">Telefone</label>
+                            <input type="tel" class="form-control" id="editContaTelefone" placeholder="Seu telefone" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="editContaSenha" class="form-label">Nova Senha</label>
+                            <input type="password" class="form-control" id="editContaSenha" placeholder="Deixe vazio para manter a atual">
+                        </div>
+                        <div class="mb-1">
+                            <label for="editContaConfirmaSenha" class="form-label">Confirmar Nova Senha</label>
+                            <input type="password" class="form-control" id="editContaConfirmaSenha" placeholder="Confirme a nova senha">
+                        </div>
+                        <div id="erroEditarConta" class="alert alert-danger d-none mt-3" role="alert"></div>
+                        <div id="sucessoEditarConta" class="alert alert-success d-none mt-3" role="alert">
+                            Conta atualizada com sucesso!
+                        </div>
+                        <div class="modal-footer justify-content-center">
+                            <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="button" class="btn btn-verde" onclick="salvarEdicaoConta()">Salvar Alterações</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade modal-verde" id="modalExcluirConta" tabindex="-1"
+        aria-labelledby="modalExcluirContaTitulo" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title font-weight-bold" id="modalExcluirContaTitulo">Excluir Minha Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <p style="font-size: 17px;">Tem certeza que deseja excluir sua conta?</p>
+                    <p class="text-muted" style="font-size: 14px;">
+                        ⚠️ Todos os seus agendamentos serão cancelados e sua conta será removida permanentemente.
+                    </p>
+                </div>
+                <div class="modal-footer justify-content-center" style="border: none;">
+                    <button type="button" class="btn btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-perigo" onclick="confirmarExclusaoConta()">Excluir Conta</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
