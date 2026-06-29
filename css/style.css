@@ -71,6 +71,7 @@ body {
     object-fit: cover;
 }
 
+
 .meu-carrosel .carousel-item {
     transform: scale(0.94);
     transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out !important;
@@ -99,25 +100,48 @@ body {
 }
 
 .carousel-item h5 {
-    font-size: 25px;       /* Ajuste esse número até ficar do tamanho que você gostar */
-    font-weight: 700;      /* Deixa o título mais gordinho (negrito) */
-    margin-bottom: 10px;   /* Cria um espacinho extra entre o título e o parágrafo */
+    font-size: 25px;
+    /* Ajuste esse número até ficar do tamanho que você gostar */
+    font-weight: 700;
+    /* Deixa o título mais gordinho (negrito) */
+    margin-bottom: 10px;
+    /* Cria um espacinho extra entre o título e o parágrafo */
 }
 
 /* Para aumentar a descrição (o parágrafo) do procedimento */
 .carousel-item p {
-    font-size: 20px;       
-    line-height: 1.6;      
+    font-size: 20px;
+    line-height: 1.6;
 }
 
 #carrosselProcedimentos {
-    max-width: 800px;  /* Impede o carrossel de ficar gigante em telas grandes */
-    margin: 0 auto;    /* Centraliza o carrossel perfeitamente no meio da página */
+    max-width: 800px;
+    /* Impede o carrossel de ficar gigante em telas grandes */
+    margin: 0 auto;
+    /* Centraliza o carrossel perfeitamente no meio da página */
 }
 
 #carrosselProcedimento .carousel-item img {
-    max-height: 400px; /* Controla a altura máxima da foto para não sumir com o site */
-    object-fit: cover; /* Faz a foto se ajustar ao espaço sem ficar distorcida ou esticada */
+    max-height: 400px;
+    /* Controla a altura máxima da foto para não sumir com o site */
+    object-fit: cover;
+    /* Faz a foto se ajustar ao espaço sem ficar distorcida ou esticada */
+}
+
+.btn-seta {
+    background: transparent;
+    border: none;
+    color: var(--verde);
+    font-size: 2.2rem;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+    padding: 0;
+    line-height: 1;
+}
+
+.btn-seta:hover {
+    color: #6b4f35;
+    transform: scale(1.15);
 }
 
 .feedbacks {
