@@ -4,10 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flávia Ribeiro | Agendamento Clientes</title>
+    <title>Flávia Ribeiro | Agendamento</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/agendamento.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -32,8 +33,7 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html"
-                                onclick="localStorage.removeItem('userLogged');">Sair</a>
+                            <a class="nav-link" href="">Sua conta</a>
                         </li>
                     </ul>
                 </div>
@@ -41,8 +41,76 @@
         </nav>
     </header>
 
-    <div class="container mt-5 pt-5 text-center">
-        <h1 class="text-center">Agendamentos</h1>
+    <div class="container container-principal mt-5 pt-5">
+        <div class="row g-4 align-items-stretch">
+            
+            <div class="col-12 col-md-6">
+                <div class="card card-agendamento-estilizado p-4 h-100 shadow-sm border-0">
+                    <h2 class="mb-4 text-center font-weight-bold">Novo Agendamento</h2>
+                    
+                    <form id="formAgendamento" onsubmit="return false">
+                        <div class="mb-3">
+                            <label for="selectProcedimento" class="form-label">Procedimento</label>
+                            <select class="form-select" id="selectProcedimento" required>
+                                <option value="" disabled selected>Escolha o procedimento...</option>
+                                <option value="Extensão de Cílios">Extensão de Cílios</option>
+                                <option value="Sobrancelha com Henna">Sobrancelha com Henna</option>
+                                <option value="Design de Sobrancelhas">Design de Sobrancelhas</option>
+                                <option value="Limpeza de Pele">Limpeza de Pele</option>
+                                <option value="Dermaplaning + Limpeza de Pele">Dermaplaning + Limpeza de Pele</option>
+                                <option value="Micropigmentação Labial">Micropigmentação Labial</option>
+                                <option value="Micropigmentação de Sobrancelhas">Micropigmentação de Sobrancelhas</option>
+                                <option value="Lash Lifting">Lash Lifting</option>
+                                <option value="Brow Lamination">Brow Lamination</option>
+                                <option value="Massagem">Massagem</option>
+                                <option value="Drenagem Linfática">Drenagem Linfática</option>
+                                <option value="Microagulhamento">Microagulhamento</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="inputData" class="form-label">Data</label>
+                            <input type="date" class="form-control" id="inputData" required>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="selectHora" class="form-label">Horário</label>
+                            <select class="form-select" id="selectHora" required>
+                                <option value="" disabled selected>Escolha um horário...</option>
+                                <option value="08:00">08:00</option>
+                                <option value="09:00">09:00</option>
+                                <option value="10:00">10:00</option>
+                                <option value="11:00">11:00</option>
+                                <option value="13:00">13:00</option>
+                                <option value="14:00">14:00</option>
+                                <option value="15:00">15:00</option>
+                                <option value="16:00">16:00</option>
+                                <option value="17:00">17:00</option>
+                                <option value="18:00">18:00</option>
+                                <option value="19:00">19:00</option>
+                            </select>
+                        </div>
+
+                        <div id="erroAgendamento" class="alert alert-danger d-none" role="alert"></div>
+                        <div id="sucessoAgendamento" class="alert alert-success d-none" role="alert">
+                            Procedimento agendado com sucesso!
+                        </div>
+
+                        <button type="button" class="btn botaozin w-100 py-2.5 font-weight-bold" onclick="fazerAgendamento()">Confirmar Agendamento</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="card card-agendamento-estilizado p-4 h-100 shadow-sm border-0 d-flex flex-column">
+                    <h2 class="mb-4 text-center font-weight-bold">Seus Agendamentos</h2>
+
+                    <div id="listaAgendamentos" class="scroll-agendamentos flex-grow-1 pe-1">
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 
     <footer class="text-center mt-5">

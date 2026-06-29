@@ -1,0 +1,133 @@
+:root {
+    --verde: #967250;
+    --branco: #F9F5F0;
+    --bege: #EFE8CE;
+}
+
+body {
+    background-color: var(--branco);
+    font-family: "Inria Serif", serif;
+    padding-top: 130px;
+    padding-bottom: 80px;
+}
+
+.minha-navbar {
+    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    color: var(--verde);
+    text-align: center;
+}
+
+.minha-navbar .navbar-brand {
+    color: var(--verde);
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.navbar-brand img {
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.navbar-nav .nav-link {
+    color: var(--verde);
+    font-size: 23px;
+    margin-right: 10px;
+}
+
+.container-principal {
+    color: var(--verde);
+}
+
+.card-agendamento-estilizado {
+    background-color: var(--bege);
+    border: 2px solid var(--verde) !important;
+    border-radius: 25px;
+    color: var(--verde);
+}
+
+.card-agendamento-estilizado h2 {
+    font-weight: 700;
+    color: var(--verde);
+}
+
+.card-agendamento-estilizado .form-control,
+.card-agendamento-estilizado .form-select {
+    border: 2px solid var(--verde);
+    border-radius: 15px;
+    color: var(--verde);
+    background-color: var(--branco);
+}
+
+.card-agendamento-estilizado .form-control:focus,
+.card-agendamento-estilizado .form-select:focus {
+    border-color: var(--verde);
+    box-shadow: 0 0 0 0.25rem rgba(150, 114, 80, 0.25);
+}
+
+.botaozin {
+    background-color: var(--verde);
+    color: var(--branco);
+    padding: 10px 20px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: none;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.botaozin:hover {
+    color: var(--branco);
+    background-color: #7d5e41;
+    transform: scale(1.02);
+}
+
+.scroll-agendamentos {
+    max-height: 380px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.card-agendamento-info {
+    background-color: var(--branco);
+    border: 1px solid var(--verde) !important;
+    border-radius: 15px;
+    transition: transform 0.2s ease;
+}
+
+footer {
+    background: linear-gradient(to right, var(--bege), #E4E0D1);
+    color: var(--verde);
+    padding: 15px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    body {
+        padding-top: 40px;
+        padding-bottom: 150px;
+    }
+
+    .navbar-brand img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .minha-navbar .navbar-brand {
+        font-size: 18px;
+    }
+
+    .card-agendamento-estilizado {
+        padding: 20px !important;
+    }
+
+    .scroll-agendamentos {
+        max-height: 300px;
+    }
+
+    .card-agendamento-info {
+        padding: 15px !important;
+    }
+}
